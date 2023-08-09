@@ -15,7 +15,7 @@ class Intro(Scene):
         self.play(
             square.animate.shift(UP),					# Di chuyển hình vuông lên trên 1 đơn vị
             triangle.animate.shift(DOWN * 0.5),			# Di chuyển tam giác xuống dưới 0.5 đơn vị
-            circle.animate.shift(UP * 0.5+RIGHT*1)		# DI chuyển đường tròn lên trên 1 đơn vị và sang phải 0.5 đơn vị
+            circle.animate.shift(UP * 0.5+RIGHT*1)		# DI chuyển đường tròn lên trên 0.5 đơn vị và sang phải 1 đơn vị
         )
 
         # Hoạt cảnh 3: Xoay hình, tô nền
@@ -27,7 +27,7 @@ class Intro(Scene):
 
         # Hoạt cảnh 4: Nhóm các đối tượng
         group = VGroup(square, triangle, circle)					# Nhóm 3 hình và đặt tên nhóm là group
-        self.play(group.animate.scale(0.5).arrange(buff=2))			# Sắp xếp các phần tử trong nhóm group theo hàng ngang từ trái sang phải
+        self.play(group.animate.scale(0.5).arrange(buff=2))			# Sắp xếp các phần tử trong nhóm group theo hàng ngang từ trái sang phải, khoảng cách các hình 2 đơn vị
 
         # Hoạt cảnh 5: Hoán đổi vị trí các hình
         self.play(Swap(square, triangle))
@@ -35,5 +35,5 @@ class Intro(Scene):
 
         # Hoạt cảnh 6: Ẩn các hình
         self.play(
-        	FadeOut(square), FadeOut(triangle), FadeOut(circle), run_time=2		# Ẩn các hình
+        	FadeOut(square), FadeOut(triangle), FadeOut(circle), run_time=2		# Ẩn các hình, thời gian thực hiện trong 2 giây.
         )
